@@ -6,6 +6,8 @@ import { JobRequirements } from './JobRequirements';
 import JobType from './types/JobType';
 import { jobsActions } from '../actions';
 
+import moment from 'moment';
+
 interface IProps {
     job: JobType;
     selected?: boolean;
@@ -16,10 +18,6 @@ interface IProps {
 }
 
 class Job extends React.Component<IProps> {
-    constructor(props: IProps) {
-        super(props);
-    }
-
     apply(job: JobType) {
         if (this.props.applied) {
             this.props.cancelApplication(job.id);
@@ -99,7 +97,8 @@ class Job extends React.Component<IProps> {
                         </span>
                     </div>
                     <div className='meta'>
-                        {job.city} - About {job.created} ago
+                        {job.city} - About {moment().from(job.created, true)}{' '}
+                        ago
                     </div>
                 </div>
 

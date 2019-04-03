@@ -1,4 +1,14 @@
 {
+    "skills": [
+        "React.js",
+        "Python",
+        "CSS",
+        "Angular.js",
+        "PHP",
+        "Agile",
+        "Laravel"
+    ],
+    "locations": ["Toronto CA", "Waterloo CA", "Montreal CA"],
     "jobs": [
         {
             "id": "1",
@@ -8,7 +18,7 @@
             "description": "",
             "requirements": ["React.js", "Python", "CSS"],
             "plus": ["Laravel", "Java", "PHP"],
-            "created": "2019-03-28 10:00:29"
+            "created": "2019-04-02 23:13:29"
         },
 
         {
@@ -19,7 +29,7 @@
             "description": "",
             "requirements": ["Angular.js", "React.js", "PHP"],
             "plus": ["React.js", "Agile"],
-            "created": "2019-03-20 12:15:32"
+            "created": "2019-03-28 10:00:29"
         },
 
         {
@@ -30,7 +40,7 @@
             "description": "",
             "requirements": ["Java", "Spring Boot"],
             "plus": ["AWS", "Heroku"],
-            "created": "2019-01-01 15:00:00"
+            "created": "2019-03-20 12:15:32"
         },
 
         {
