@@ -1,15 +1,16 @@
 import React from 'react';
+import SkillType from './types/SkillType';
 
 interface IProps {
-    requirements: string[];
+    requirements: SkillType[];
 }
 
 export const JobRequirements = (props: IProps) => {
     return (
         <div>
-            {props.requirements.map((requirement, idx) => {
+            {props.requirements.map(requirement => {
                 return (
-                    <span className='ui label' key={requirement + idx}>
+                    <span className='ui label' key={requirement.id}>
                         <i className='icon check' />
                         {requirement}
                     </span>

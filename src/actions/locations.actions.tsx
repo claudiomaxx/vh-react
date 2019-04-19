@@ -1,5 +1,5 @@
 import { jobsConstants } from '../constants';
-import { locationService } from '../services';
+// import { locationService } from '../services';
 
 export const locationsActions = {
     list,
@@ -16,7 +16,7 @@ function list() {
 
     return async (dispatch: any) => {
         dispatch(request());
-        const response = await locationService.getLocations();
-        dispatch(success(response));
+        // const response = await locationService.getLocations();
+        dispatch(success([]));
     };
 }

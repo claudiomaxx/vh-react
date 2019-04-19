@@ -1,5 +1,5 @@
 import { jobsConstants } from '../constants';
-import { skillService } from '../services';
+// import { skillService } from '../services';
 
 export const skillsActions = {
     list,
@@ -16,7 +16,7 @@ function list() {
 
     return async (dispatch: any) => {
         dispatch(request());
-        const response = await skillService.getSkills();
-        dispatch(success(response));
+        // const response = await skillService.getSkills();
+        dispatch(success([]));
     };
 }

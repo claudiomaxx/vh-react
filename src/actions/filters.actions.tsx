@@ -1,5 +1,5 @@
 import { jobsConstants } from '../constants';
-import { skillService } from '../services';
+// import { skillService } from '../services';
 
 export const filtersActions = {
     selectSkill,

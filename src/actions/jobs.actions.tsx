@@ -1,6 +1,6 @@
 import JobType from '../components/types/JobType';
 import { jobsConstants } from '../constants';
-import { jobService } from '../services';
+import services from '../services';
 
 export const jobsActions = {
     list,
@@ -9,7 +9,7 @@ export const jobsActions = {
     cancelApplication,
 };
 
-function list(filter: any) {
+function list() {
     const request = () => ({ type: jobsConstants.JOB_LIST_REQUEST });
     const success = (jobs: JobType[]) => {
         return {
@@ -18,10 +18,13 @@ function list(filter: any) {
         };
     };
 
-    return async (dispatch: any) => {
+    return async dispatch => {
         dispatch(request());
-        const response = await jobService.getJobs();
-        dispatch(success(response));
+
+        const response = await services.getJobs();
+        console.log('>>>>>>>>>.', response);
+
+        dispatch(success(response.data));
     };
 }
 

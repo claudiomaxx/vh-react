@@ -1,31 +1,51 @@
+import SkillType from './SkillType';
+import CompanyType from './CompanyType';
+import LocationType from './LocationType';
+
 export default class JobType {
     private _id: string;
     private _title: string;
-    private _city: string;
     private _summary: string;
     private _description: string;
-    private _requirements: string[];
-    private _plus: string[];
+    private _requirementsId: string[];
+    private _plusId: string[];
+    private _companyId: string;
+    private _locationId: string;
     private _created: string;
 
     constructor(
         id: string = '',
         title: string = '',
-        city: string = '',
         summary: string = '',
         description: string = '',
-        requirements: string[] = [],
-        plus: string[] = [],
+        requirementsId: string[] = [],
+        plusId: string[] = [],
+        companyId: string = '',
+        locationId: string = '',
         created: string = ''
     ) {
         this._id = id;
         this._title = title;
-        this._city = city;
         this._summary = summary;
         this._description = description;
-        this._requirements = requirements;
-        this._plus = plus;
+        this._requirementsId = requirementsId;
+        this._plusId = plusId;
+        this._companyId = companyId;
+        this._locationId = locationId;
         this._created = created;
+    }
+
+    toJSON() {
+        return {
+            title: this._title,
+            summary: this._summary,
+            description: this._description,
+            requirements: this._requirementsId.map(o => o),
+            plus: this._plus.map(o => o),
+            company: this._companyId,
+            locationId: this._locationId,
+            created: this._created,
+        };
     }
 
     /**
@@ -45,14 +65,6 @@ export default class JobType {
     }
 
     /**
-     * Getter city
-     * @return {string}
-     */
-    public get city(): string {
-        return this._city;
-    }
-
-    /**
      * Getter summary
      * @return {string}
      */
@@ -69,19 +81,35 @@ export default class JobType {
     }
 
     /**
-     * Getter requirements
+     * Getter requirementsId
      * @return {string[]}
      */
-    public get requirements(): string[] {
-        return this._requirements;
+    public get requirementsId(): string[] {
+        return this._requirementsId;
     }
 
     /**
-     * Getter plus
+     * Getter plusId
      * @return {string[]}
      */
-    public get plus(): string[] {
-        return this._plus;
+    public get plusId(): string[] {
+        return this._plusId;
+    }
+
+    /**
+     * Getter companyId
+     * @return {string}
+     */
+    public get companyId(): string {
+        return this._companyId;
+    }
+
+    /**
+     * Getter location
+     * @return {LocationType}
+     */
+    public get locationId(): string {
+        return this._locationId;
     }
 
     /**
@@ -109,14 +137,6 @@ export default class JobType {
     }
 
     /**
-     * Setter city
-     * @param {string} value
-     */
-    public set city(value: string) {
-        this._city = value;
-    }
-
-    /**
      * Setter summary
      * @param {string} value
      */
@@ -133,19 +153,35 @@ export default class JobType {
     }
 
     /**
-     * Setter requirements
+     * Setter requirementsId
      * @param {string[]} value
      */
-    public set requirements(value: string[]) {
-        this._requirements = value;
+    public set requirementsId(value: string[]) {
+        this._requirementsId = value;
     }
 
     /**
-     * Setter plus
+     * Setter plusId
      * @param {string[]} value
      */
-    public set plus(value: string[]) {
-        this._plus = value;
+    public set plusId(value: string[]) {
+        this._plusId = value;
+    }
+
+    /**
+     * Setter companyId
+     * @param {string} value
+     */
+    public set companyId(value: string) {
+        this._companyId = value;
+    }
+
+    /**
+     * Setter location
+     * @param {LocationType} value
+     */
+    public set locationId(value: string) {
+        this._locationId = value;
     }
 
     /**

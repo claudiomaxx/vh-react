@@ -97,8 +97,8 @@ class Job extends React.Component<IProps> {
                         </span>
                     </div>
                     <div className='meta'>
-                        {job.city} - About {moment().from(job.created, true)}{' '}
-                        ago
+                        {job.locationId} - About{' '}
+                        {moment().from(job.created, true)} ago
                     </div>
                 </div>
 
@@ -106,13 +106,13 @@ class Job extends React.Component<IProps> {
 
                 <div className='content'>
                     <h3 className='ui sub header'>MUST HAVE SKILLS</h3>
-                    <JobRequirements requirements={job.requirements} />
+                    <JobRequirements requirements={job.requirementsId} />
                 </div>
 
                 {selected && (
                     <div className='content'>
                         <h3 className='ui sub header'>NICE TO HAVE SKILLS</h3>
-                        <JobRequirements requirements={job.plus} />
+                        <JobRequirements requirements={job.plusId} />
                     </div>
                 )}
 
